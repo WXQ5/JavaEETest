@@ -12,8 +12,9 @@
     <title>Title</title>
 </head>
 <body>
+<%--将emp表的数据全部查询并显示出来--%>
 <form action="${pageContext.request.contextPath}/FindAll" method="post">
-    <input type="submit" value="提交">
+    <input type="submit" value="查询">
 </form>
 <table>
     <tr>
@@ -24,7 +25,7 @@
         <th>员工工资</th>
     </tr>
     <c:if test="${!empty emps}">
-        <c:forEach items="emps" var="emp">
+        <c:forEach items="${emps}" var="emp">
             <tr>
                 <td>${emp.empno}</td>
                 <td>${emp.ename}</td>
